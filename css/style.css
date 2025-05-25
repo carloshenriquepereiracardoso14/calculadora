@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/back.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.opacidade{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgb(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 300px;
+    border-radius: 12px;
+    background: black;
+    padding: 30px;
+    z-index: 1000;
+    box-shadow: 0 0 25px rgb(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+.card::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      rgba(0, 140, 255, 0.8),
+      rgba(0, 255, 255, 0.8),
+      rgba(47, 0, 255, 0.8)
+    );
+    animation: borda 3s linear infinite;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+}
+  
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: black;
+    border-radius: 12px;
+    z-index: -1;
+}
+  
+@keyframes borda {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+
+.card input{
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    background: #1e1e1e;
+    color: #999;
+    border-radius: 6px;
+}
+
+.card input:focus{
+    border: 2px solid rgba(0, 140, 255, 0.8);
+}
+
+.card input::placeholder{
+    color: #999;
+}
+
+#resultado{
+    border: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.top{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top h3 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.top img{
+    width: 60px;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.buttons button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: #fff;
+    color: #1e1e1e;
+    border: none;
+    outline: none;
+    font-weight: 900;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.3rem;
+}
+
+.buttons button span{
+    font-size: 2rem;
+}
+
+.buttons button:hover{
+    opacity: .9;
+}
+
+.buttons button:focus{
+    scale: .950;
+}
+
+.buttons button:last-child{
+    background: rgba(0, 140, 255, 0.8);
+    color: #fff;
+}
+
+.neve{
+    background: transparent;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    animation: neve 10s infinite linear;
+}
+
+@keyframes neve {
+    0%{
+        transform: translateY(-100%) rotate(0);
+    }
+
+    100%{
+       transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.neve:nth-child(2){
+    left: 15%;
+    animation-delay: 1s;
+}
+
+.neve:nth-child(3){
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.neve:nth-child(4){
+    left: 43%;
+    animation-delay: 3s;
+}
+
+.neve:nth-child(5){
+    left: 65%;
+    animation-delay: 4s;
+}
+
+.neve:nth-child(6){
+    left: 90%;
+    animation-delay: 5.5s;
+}
+
+.neve:nth-child(7){
+    left: 75%;
+    animation-delay: 6s;
+}
+
+.neve:nth-child(8){
+    left: 95%;
+    animation-delay: 7s;
+}
+
+@media (max-width:280px) {
+    .card{
+        width: 95%;
+    }
+}
