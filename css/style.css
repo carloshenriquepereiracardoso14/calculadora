@@ -26,6 +26,7 @@ body{
     object-fit: cover;
     position: relative;
     overflow: hidden;
+    padding: 15px;
 }
 
 .card{
@@ -173,7 +174,7 @@ input[type="number"]::-webkit-inner-spin-button {
     position: absolute;
     z-index: 1;
     left: 0;
-    top: 0;
+    top: -20px;
     animation: neve 10s infinite linear;
 }
 
@@ -225,5 +226,14 @@ input[type="number"]::-webkit-inner-spin-button {
 @media (max-width:280px) {
     .card{
         width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        max-width: 95vw;
+        padding: 20px;
+        height: auto;
     }
 }
